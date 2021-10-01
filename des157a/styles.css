@@ -1,62 +1,269 @@
-body {
-    font-family: 'Source Code Pro', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 ul {
     list-style-type: none;
     padding: 0;
 }
 
+a {
+    color: rgb(0, 172, 0);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: rgb(0, 172, 0);
+}
+
+header {
+    width: 80.5%;
+}
+
+header, main, footer {
+    margin-bottom: 25px;
+}
+
 #container {
     max-width: 1366px;
     min-width: 900px;
-    border: 2px blue solid;
+    width: 1366px;
+    border: 2px rgb(0, 172, 0) solid;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
 }
 
 #banner {
-    width: 1100px;
+    position: relative;
     height: 250px;
-    border: 2px red solid;
+    border: 2px rgb(0, 172, 0) solid;
+}
+
+#cannon {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: calc(50% - 7px);
+    cursor: pointer;
+}
+
+#cannon-base {
+    width: 6px;
+    height: 17px;
+    background-color: rgb(0, 172, 0);
+    top: 0;
+    left: 0;
+}
+
+#cannon-barrel {
+    position: absolute;
+    width: 16px;
+    height: 5px;
+    background-color: rgb(0, 172, 0);
+    top: 6px;
+    left: 0;
+}
+
+#laser {
+    position: absolute;
+    width: 10px;
+    height: 1px;
+    border: 1px rgb(0, 172, 0) solid;
+    background-color: rgb(0, 172, 0);
+    top: 50%;
+    left: 0;
+    visibility: visible;
+}
+
+#cannon:hover + #laser {
+    animation: flyleft 0.8s linear 1 forwards;
+}
+
+@keyframes flyleft {
+    from {
+        left: 0;
+        visibility: visible;
+    }
+    to {
+        left: calc(100% - 11px);
+        visibility: hidden;
+    }
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    border: 2px rgb(0, 172, 0) solid;
+    position: absolute;
+}
+
+#square1 {
+    bottom: 0;
+    left: calc(33% - 30px);
+    animation: updowneaseinout 3s ease-in-out infinite alternate;
+}
+
+#square2 {
+    bottom: 0;
+    left: calc(50%);
+    animation: updowneaseinout 2s ease-in-out infinite alternate;
+}
+
+@keyframes updowneaseinout {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: calc(100% - 22px);
+    }
+}
+
+#square3 {
+    top: calc(50% - 10px);
+    left: calc(40%);
+    transition-property: top;
+    transition-duration: 5s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+#square3:hover {
+    top: 0;
+}
+
+#square4 {
+    bottom: calc(50% - 10px);
+    right: calc(30%);
+    animation: updownlinear 2s linear infinite alternate;
+}
+
+#square5 {
+    bottom: calc(50% - 10px);
+    right: calc(20%);
+    animation: updownlinear 1s linear infinite alternate;
+}
+
+@keyframes updownlinear {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: calc(100% - 22px);
+    }
+}
+
+#square6 {
+    bottom: calc(50% - 10px);
+    left: calc(60%);
+    transition-property: bottom;
+    transition-duration: 7s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+#square6:hover {
+    bottom: 0;
+}
+
+#finalwalltop {
+    position: absolute;
+    border: 2px rgb(0, 172, 0) solid;
+    width: 15px;
+    height: 60px;
+    top: 0;
+    right: 60px;
+    z-index: 0;
+}
+
+#finalwallbottom {
+    position: absolute;
+    border: 2px rgb(0, 172, 0) solid;
+    width: 15px;
+    height: 60px;
+    bottom: -1px;
+    right: 60px;
+    z-index: 0;
+}
+
+#finalwalltopdoor {
+    position: absolute;
+    border: 2px rgb(0, 172, 0) solid;
+    width: 7px;
+    height: 0px;
+    top: 63px;
+    right: 64px;
+    animation-name: close-door;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+#finalwallbottomdoor {
+    position: absolute;
+    border: 2px rgb(0, 172, 0) solid;
+    width: 7px;
+    height: 0px;
+    bottom: 62px;
+    right: 64px;
+    animation-name: close-door;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes close-door {
+    0% {
+        height: 0px;
+    }
+    33% {
+        height: 60px;
+    }
+    66% {
+        height: 60px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+#target {
+    position: absolute;
+    height: 30px;
+    width: 10px;
+    border: 2px rgb(0, 172, 0) solid;
+    top: calc(50% - 15px);
+    right: 0;
 }
 
 main {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
     justify-content: space-between;
     border: 2px black dotted;
-    width: 1100px;
+    width: 80.5%;
 }
 
 main section {
-    width: 33%;
-}
-
-#projects {
+    width: 27%;
+    padding-left: 20px;
     border: 2px green solid;
 }
 
-#r-and-d {
-    border: 2px orange solid;
+main section ul li {
+    margin-bottom: 10px;
 }
 
-#final {
-    border: 2px purple solid;
+main section ul li:before {
+    content: ">";
 }
 
 footer {
-    border: 2px red solid;
-}
-
-footer nav {
-    border: 3px green dotted;
+    border: 2px rgb(0, 172, 0) solid;
 }
 
 footer nav ul {
@@ -64,8 +271,11 @@ footer nav ul {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 600px;
 }
 
 footer nav ul li {
     border: 2px black solid;
+    width: 33%;
+    text-align: center;
 }
