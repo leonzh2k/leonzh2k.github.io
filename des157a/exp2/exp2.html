@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <p id="color-indicator"></p>
+    <script>
+        /*
+            Prompts the user to enter how many colors they want. If not a number it tells the user
+            and does nothing. If a valid number the screen will change colors the number of times
+            user entered. If the number entered is greater than the number of colors available
+            it will stop at the last color and tell the user there aren't enough colors.
+
+            I didn't look up setTimeout, I have prior experience with it.
+        */
+
+        function displayRainbow(input, pageBackground, colorIndicator) {
+            let colors = ["red", "yellow", "blue", "white", "green", "purple", "orange", "pink", "aquamarine"];
+            let delay = 0;
+            for (let i = 0; i < input; i++) {
+                if (i >= colors.length) {
+                    setTimeout(() => {
+                        colorIndicator.textContent = "We ran out of colors";
+                    }, delay);
+                    break;
+                } else {
+                    setTimeout(() => {
+                        pageBackground.style.backgroundColor = colors[i];
+                        colorIndicator.textContent = "Here's some " + colors[i];
+                    }, delay);
+                    delay += 1000;
+                }
+            }
+        }
+
+        function handleInput(input, pageBackground, colorIndicator) {
+            let inputAsNum = Math.floor(Number(input));
+            console.log(inputAsNum);
+            if (Number.isNaN(inputAsNum)) {
+                colorIndicator.textContent = "That wasn't a number";
+            } else {
+                flag = displayRainbow(inputAsNum, pageBackground, colorIndicator);
+            }
+        }
+
+        function getUserInput() {
+            let numColors = prompt("how many colors do you want", "");
+            return numColors;
+        }
+
+        let pageBackground = document.querySelector("body");
+        let colorIndicator = document.querySelector("#color-indicator");
+        colorIndicator.style.backgroundColor = "black";
+        colorIndicator.style.color = "white";
+        handleInput(getUserInput(), pageBackground, colorIndicator);
+    </script>
+</body>
+</html>
