@@ -22,6 +22,7 @@
         
         outputLines.forEach(line => {
             output.appendChild(document.createTextNode(line));
+            output.appendChild(document.createElement("br"));
         });
         
     }
