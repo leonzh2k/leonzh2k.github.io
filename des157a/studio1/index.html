@@ -4,55 +4,80 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+        <!--  -->
         <link rel="stylesheet" href="styles.css">
-        <title>Learn to JS Lesson 3: Fun with For Loops</title>
+        <title>Fun With For Loops</title>
         <script src="script.js" defer></script>
     </head>
     <body class="flex-column-wrapper">
         <header>
-            <h1>Learn to JS Lesson 3: Fun with For Loops</h1>
+            <h1>Fun With For Loops</h1>
         </header>
         <main class="flex-row-wrapper">
             <section id="code-playground" class="flex-column-wrapper">
                 <div class="section-header flex-row-wrapper">
                     <h2>Code</h2>
-                    <button id="run-code-button">Run</button>
+                    <button id="run-code-button">Run >></button>
                 </div>
                 <form id="">
                     <code>
                         <pre>
-                            01   console.log("First for loop running...");
+                            01   print("First for loop running...");
                             02
                             03   for (let i = 0; i < <input type="number" id="unnested-for-loop-max-iter-input">; i++) { 
                             04       console.log("<input type="text" id="unnested-for-loop-console-log-input">");
                             05   }
                             06
-                            07   console.log("First for loop ended.");
+                            07   print("First for loop ended.");
                             08
-                            09   console.log("Nested for loop running...");
+                            09   print("Nested for loop running...");
                             10
                             11   for (let i = 0; i < <input type="number" id="nested-for-loop-outer-loop-max-iter-input">; i++) { 
                             12      let emptyStr = "";
                             13      for (let j = 0; j < <input type="number" id="nested-for-loop-inner-loop-max-iter-input">; j++) {
                             14          emptyStr += "<input type="text" id="nested-for-loop-box-symbol">"   
                             15      }
-                            16      console.log(emptyStr);
+                            16      print(emptyStr);
                             17   }
                             18
-                            19  console.log("Nested for loop ended.");
+                            19  print("Nested for loop ended.");
+                            20
+                            21
+                            22
+                            23
+                            24
+                            25
+                            26
+                            27
+                            28
                         </pre>
                     </code>
                 </form>
             </section>
             <section id="code-output" class="flex-column-wrapper">
-                <div class="section-header">
+                <div class="section-header flex-row-wrapper">
                     <h2>Output</h2>
                 </div>
-                <div id="output"></div>
+                <div id="output">
+                    
+                </div>
             </section>
         </main>
-        <footer>
-
+        <footer class="flex-row-wrapper">
+            <nav>
+                <ul class="flex-row-wrapper">
+                    <li>
+                        <a href="https://validator.w3.org/check?uri=https://leonzh2k.github.io/des157a/studio1">Valid HTML5</a>
+                    </li>
+                    <li>
+                        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+                    </li>
+                </ul>
+            </nav>
         </footer>
     </body>
 </html>

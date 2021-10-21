@@ -2,23 +2,57 @@
     box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    min-width: 900px;
+    /* width: 100%; */
+}
+
 body {
     background-color: rgb(37, 37, 37);
     color: white;
-}
-
-html, body {
-    min-height: 100%;
-    min-width: 900px;
-    /* width: 100%; */
+    font-family: 'Source Code Pro', monospace;
+    /* border: 2px red solid; */
 }
 
 h1, h2 {
     margin-left: 20px;
 }
 
+li {
+    list-style-type: none;
+    margin: 0;
+}
+
+main {
+    /* border: 2px green solid; */
+    height: 81.5vh;
+}
+
 header {
     background-color: rgb(68, 68, 68);
+    color: white;
+}
+
+footer {
+    /* border: 2px red solid; */
+    background-color: rgb(68, 68, 68);
+    justify-content: center;
+}
+
+footer nav ul {
+    /* border: 2px red solid; */
+    /* border: 2px green solid; */
+    width: 700px;
+    justify-content: space-around;
+}
+
+footer nav ul li a {
+    /* border: 2px red solid; */
+    background-color: rgb(68, 68, 68);
+    text-decoration: none;
+    font-weight: bold;
     color: white;
 }
 
@@ -32,38 +66,57 @@ header {
     display: flex;
     flex-direction: row;
     /* border: 2px red solid; */
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }
 
 .section-header {
-    background-color: rgb(75, 75, 255);
+    background-color: #00A3FF;
     height: 60px;
-    justify-content: stretch;
+    /* border: 2px white dotted; */
+    align-items: center;
 }
 
 #code-playground {
-    border: 2px purple solid;
+    /* border: 5px white solid; */
+    border-right: 5px white solid;
+    /*
+    border-bottom: 5px white solid;
+    border-left: 5px white solid; */
     width: 60%;
     font-size: large;
 }
 
-#code-playground h2, div {
-    display: inline;
+#code-playground .section-header {
+    justify-content: space-between;
+}
+
+#code-playground .section-header button {
+    height: 100%;
+    width: 150px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 27px;
+    font-weight: bold;
+    border: none;
+    background-color: #00FF85;
+    color: black;
+    cursor: pointer;
 }
 
 #code-output {
-    border: 2px orange solid;
+    /* border: 2px orange solid; */
     width: 40%;
 }
 
-/* code {
-    position: relative;
-} */
+#code-output .section-header {
+    justify-content: flex-start;
+}
+
+#output {
+    /* overflow-y: scroll; */
+}
 
 pre {
     margin-left: -240px;
+    border: 2px yellow solid;
 }
 
-.indented-code {
-    padding: 20px;
-}

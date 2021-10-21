@@ -1,6 +1,12 @@
 (function () {
     "use strict";
-    function displayCodeOutput(userInputs) {
+
+    function clearTerminal() {
+        let output = document.querySelector("#output");
+        output.textContent = "";
+    }
+
+    function displayCodeOnTerminal(userInputs) {
         let outputLines = [];
         outputLines.push("First for loop running...");
 
@@ -21,7 +27,9 @@
         let output = document.querySelector("#output");
         
         outputLines.forEach(line => {
-            output.appendChild(document.createTextNode(line));
+            let spanDOMElement = document.createElement("span");
+            spanDOMElement.appendChild(document.createTextNode(line));
+            output.appendChild(spanDOMElement);
             output.appendChild(document.createElement("br"));
         });
         
@@ -51,32 +59,11 @@
 
         return userInputs;
     }
+
     let button = document.querySelector("#run-code-button");
     button.addEventListener("click", () => {
         let userInputs = getUserInputs();
-        displayCodeOutput(userInputs);
+        clearTerminal();
+        displayCodeOnTerminal(userInputs);
     });
 }());
-
-
-
-
-console.log("First for loop running...")
-                            
-for (let i = 0; i < 6; i++) { 
-    console.log("bru")
-}
-
-console.log("First for loop ended.")
-
-console.log("Nested for loop running...")
-
-for (let i = 0; i < 6; i++) { 
-    let emptyStr = "";
-    for (let j = 0; j < 6; j++) {
-        emptyStr += "*"   
-    }
-    console.log(emptyStr);
-}
-
-console.log("Nested for loop ended.")
