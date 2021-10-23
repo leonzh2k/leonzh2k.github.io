@@ -56,6 +56,86 @@ footer nav ul li a {
     color: white;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+pre {
+    margin-left: -210px;
+    line-height: 23px;
+    /* border: 2px yellow solid; */
+}
+
+pre .line-number {
+    color: rgb(173, 173, 173);
+}
+
+pre .console {
+    color: rgb(140, 255, 240);
+}
+
+pre .log {
+    color: rgb(241, 255, 111);
+}
+
+pre .for, pre .for-outer-bracket {
+    color: rgb(226, 111, 255);
+}
+
+pre .for-inner-bracket {
+    color: rgb(255, 241, 111);
+}
+
+pre .var-declaration {
+    color: rgb(68, 202, 255);
+}
+
+pre .var-name {
+    color: rgb(178, 231, 252);
+}
+
+pre .string {
+    color:rgb(250, 167, 111);
+}
+
+pre .number {
+    color:rgb(171, 255, 168);
+}
+
+pre .error-highlighted {
+    background-color: rgb(141, 0, 0);
+}
+
+
+input {
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background-color: rgb(37, 37, 37);
+    font-family: monospace;
+    padding: 0;
+    height: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+.number-input {
+    width: 20px;
+    color:rgb(171, 255, 168);
+}
+
+input[type="text"] {
+    color:rgb(250, 167, 111);
+}
+
+#nested-for-loop-box-symbol {
+    width: 30px;
+}
+
 .flex-column-wrapper {
     display: flex;
     flex-direction: column;
@@ -112,11 +192,48 @@ footer nav ul li a {
 }
 
 #output {
-    /* overflow-y: scroll; */
+    position: relative;
+    overflow-y: auto;
+    height: 75vh;
+    padding-left: 10px;
+    padding-top: 15px;
+    /* background-image: url("../studio1/images/loading.svg"); */
+    /* border: 2px red solid; */
 }
 
-pre {
-    margin-left: -210px;
-    border: 2px yellow solid;
+.code-output-line {
+    margin-bottom: 7px;
+    display: block;
+}
+
+#loading-icon {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    margin-top: -75px;
+    left: 50%;
+    margin-left: -75px;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* border: 2px green solid; */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.error-msg {
+    color: rgb(255, 130, 130);
+}
+
+.desc-error-msg {
+    padding: 20px;
 }
 
