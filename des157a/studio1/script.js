@@ -1,5 +1,6 @@
 (function () {
     "use strict";
+    console.log("reading js...");
     // clears terminal of everything. Also removes the loading icon.
     function clearTerminal() {
         let output = document.querySelector("#output");
@@ -110,7 +111,7 @@
                 input: userInputs.unnestedForLoopMaxIterVal,
                 errorType: "SyntaxError",
                 expectedInput: "integer"
-            })
+            });
         } else {
             if (Number.isNaN(Number(userInputs.unnestedForLoopMaxIterVal))) {
                 errors.push({
@@ -118,7 +119,7 @@
                     input: userInputs.unnestedForLoopMaxIterVal,
                     errorType: "TypeError",
                     expectedType: "integer"
-                })
+                });
             } 
         }
 
@@ -129,7 +130,7 @@
                 errorType: "SyntaxError",
                 expectedType: "string",
                 expectedInput: "string"
-            })
+            });
         } else {
             if (!(userInputs.unnestedForLoopConsoleLogVal[0] === '"' && userInputs.unnestedForLoopConsoleLogVal[userInputs.unnestedForLoopConsoleLogVal.length - 1] === '"')) {
                 errors.push({ 
@@ -137,7 +138,7 @@
                     input: userInputs.unnestedForLoopConsoleLogVal,
                     errorType: "TypeError",
                     expectedType: "string"
-                })
+                });
             } 
         }
         
@@ -147,7 +148,7 @@
                 input: userInputs.nestedForLoopOuterLoopMaxIterVal,
                 errorType: "SyntaxError",
                 expectedInput: "integer"
-            })
+            });
         } else {
             if (Number.isNaN(Number(userInputs.nestedForLoopOuterLoopMaxIterVal))) {
                 errors.push({
@@ -155,7 +156,7 @@
                     input: userInputs.nestedForLoopOuterLoopMaxIterVal,
                     errorType: "TypeError",
                     expectedType: "integer"
-                })
+                });
             }
         }
         if (userInputs.nestedForLoopInnerLoopMaxIterVal === "") {
@@ -164,7 +165,7 @@
                 input: userInputs.nestedForLoopInnerLoopMaxIterVal,
                 errorType: "SyntaxError",
                 expectedInput: "integer"
-            })
+            });
         } else {
             if (Number.isNaN(Number(userInputs.nestedForLoopInnerLoopMaxIterVal))) {
                 errors.push({
@@ -172,7 +173,7 @@
                     input: userInputs.nestedForLoopInnerLoopMaxIterVal,
                     errorType: "TypeError",
                     expectedType: "integer"
-                })
+                });
             } 
         }
         
@@ -184,7 +185,7 @@
                 input: userInputs.nestedForLoopBoxSymbol,
                 errorType: "SyntaxError",
                 expectedInput: "string"
-            })
+            });
         } else {
             if (!(userInputs.nestedForLoopBoxSymbol[0] === '"' && userInputs.nestedForLoopBoxSymbol[userInputs.nestedForLoopBoxSymbol.length - 1] === '"')) {
                 errors.push({ 
@@ -192,7 +193,7 @@
                     input: userInputs.nestedForLoopBoxSymbol,
                     errorType: "TypeError",
                     expectedType: "string"
-                })
+                });
             } 
         }
         
@@ -209,19 +210,19 @@
             switch (error.errorType) {
                 case ("TypeError"):
                     errorMsg = "TypeError on line " + String(error.line) + ":";
-                    descriptiveErrorMsg = `${error.input} is not a ${error.expectedType}. Please enter a ${error.expectedType}.`
+                    descriptiveErrorMsg = `${error.input} is not a ${error.expectedType}. Please enter a ${error.expectedType}.`;
                     errorMsgs.push({
                         errorMsg,
                         descriptiveErrorMsg
-                    })
+                    });
                     break;
                 case ("SyntaxError"):
                     errorMsg = "SyntaxError on line " + String(error.line) + ":";
-                    descriptiveErrorMsg = `Expected ${error.expectedInput} as input, got nothing.`
+                    descriptiveErrorMsg = `Expected ${error.expectedInput} as input, got nothing.`;
                     errorMsgs.push({
                         errorMsg,
                         descriptiveErrorMsg
-                    })
+                    });
                     break;
                 default:
                     console.log("soomething bad happend");
@@ -235,7 +236,7 @@
         errors.forEach(error => {
             let lineDOMElement = document.getElementById("code-line-" + error.line);
             lineDOMElement.classList.add("error-highlighted");
-        })
+        });
     }
 
     function unHighlightErrorLines() {
@@ -243,7 +244,7 @@
         possibleErrorLineNums.forEach(num => {
             let lineDOMElement = document.getElementById("code-line-" + num);
             lineDOMElement.classList.remove("error-highlighted");
-        })
+        });
     }
 
     function showFakeLoadingIcon(imageSrc) {
