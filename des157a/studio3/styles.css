@@ -1,8 +1,12 @@
 body {
     font-family: Arial;
     color: #333;
-    padding: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
     line-height: 1.5em;
+    /* border: 2px red solid; */
+    position: relative;
+    height: 98vh;
 }
 
 button { 
@@ -11,6 +15,23 @@ button {
 
 div {
     padding: 20px;
+}
+
+footer {
+    /* border: 2px green solid; */
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+}
+
+footer ul {
+    /* magin: 0; */
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    
 }
 
 #gamecontrol, #score {
