@@ -4,46 +4,171 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Final Project Brief</title>
 </head>
 <body>
-    <header>
-        <h1>DES 157A Final Project Brief</h1>
-    </header>
-    <main>
-        <section id="project-summary">
-            <h2>Project Summary</h2>
-        </section>
-
-        <section id="comparison-projects">
-            <h2>Comparison Projects</h2>
-            <section id="comparison-project-1">
-                <h3>Comparison Project 1</h3>
+    <div id="container">
+        <header>
+            <h1>DES 157A Final Project Brief</h1>
+        </header>
+        <main>
+            <section id="project-summary" class="flex-column-container">
+                <div>
+                    <h2>Project Summary</h2>
+                    <p>I am planning to update the Mad Libs Project to improve the educational value of the mock code editor.</p>
+                </div>
             </section>
-
-            <section id="comparison-project-2">
-                <h3>Comparison Project 2</h3>
+    
+            <section id="comparison-projects" class="flex-column-container">
+                <div>
+                    <h2>Comparison Projects</h2>
+                    <section id="comparison-project-1">
+                        <h3>Comparison Project 1</h3>
+                        <p>
+                            The first website is w3schools' TryIt Editor. The interface design is very minimal, which
+                            is good since it is very easy to figure out where all the main functions of the code editor 
+                            are. In terms of interaction design, there are various ways that users can customize their
+                            experience. For example, they are allowed to change the theme of the page and change orientation
+                            and resize the output webpage. There are tooltips on hover on each setting to let users know
+                            their function. There are also multiple ways to accomplish something; the aforementioned 
+                            customizations can be changed directly on the toolbar or in the dropdown menu. 
+                        </p>
+                        <p>
+                            One thing the website gets right is ease of operation. It is very clear how to use the site.
+                            I do have some criticisms, however. There is an advertisement for w3schools' website builder at
+                            the top right. While not distracting, that space could be used for something more useful. Also,
+                            the "save code" option only saves the code to an online service, which requires an account. 
+                            In my opinion, they should add an option to just download the code to your computer.
+                        </p>
+                    </section>
+                </div>
+                
+                <section id="figure-1">
+                    <figure>
+                        <img src="images/interface1.png" alt="interface 1" width="900" height="467">
+                        <figcaption>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfirst" target="_blank">Link To Webpage</a>
+                        </figcaption>
+                    </figure>
+                </section>
+                <section id="comparison-project-2" >
+                    <h3>Comparison Project 2</h3>
+                    <p>
+                        The second website is CodersEditor.com. This interface design is less minimal than the first
+                        comparison project, which is understandable since this editor offers support for multiple languages
+                        compared to w3schools' editor which only supports HTML/CSS and JS. In terms of interactions,
+                        the user can choose which language they want, create a new file, share the file, run the program
+                        (obviously). 
+                    </p>
+                    <p>
+                        I have more criticisms of this site than the previous one. First, the settings button next to
+                        "select programming language" doesn't work. Second, clicking "new file" seems to just refresh
+                        the page and delete your existing file. Most people would expect this to open a new file 
+                        in a new tab in the editor (like in VS Code), but it doesn't do that at all. As a result,
+                        it can actually harm user experience since the actual result is different from the user 
+                        expectation, and it could erase people's hard work without any warning.
+    
+                        Also, there is too much space devoted to things that are not relevant
+                        to the code editor. For example, the sidebar is just advertising tutorials and other tools. As 
+                        a result, the actual code editor only takes up around 70% of the screen. 
+                    </p>
+                </section>
+                <section>
+                    <!-- 1.926 W/H ratio -->
+                    
+                    <figure>
+                        
+                        <img src="images/interface2.png" alt="interface 2" width="900" height="467">
+                        <figcaption>
+                            <a href="https://coderseditor.com/" target="_blank">Link To Webpage</a>
+                        </figcaption>
+                    </figure>
+                </section>
             </section>
-        </section>
-
-        <section id="project-goals">
-            <h2>Project Goals</h2>
-        </section>
-
-        <section id="design-strategies">
-            <h2>Design Strategies</h2>
-        </section>
-
-        <section id="interaction-strategies">
-            <h2>Interaction Strategies</h2>
-        </section>
-
-        <section id="experience-goals">
-            <h2>Experience Goals</h2>
-        </section>
-    </main>
-    <footer>
-
-    </footer>
+    
+            <section id="project-goals" class="flex-column-container">
+                <div>
+                    <h2>Project Goals</h2>
+                    <p>
+                        The original project showed how for loops are structured in JavaScript. My
+                        main goal this time around is to show how for loops are structured in languages
+                        other than JavaScript. If I have time, I might add support for other programming
+                        constructs, but it's unlikely.
+                    </p>
+                    <p> 
+                        This project (and the original) differs from w3schools' code editor in that 
+                        w3schools' editor allows you to write any valid HTML, CSS, and JS and the output
+                        will be an entire working webpage. Obviously, that was too complex for my project,
+                        which only runs JS code, and even that is severely limited in its capability, 
+                        as most of the output is hardcoded and the user can only change it in small ways.
+                        Also, this project will involve languages other than HTML/CSS and JS.
+                    </p>
+                        
+                    <p>
+                        This project (and the original) differs from CodersEditor.com in that the latter
+                        supports writing programs in a variety of languages. Mine will also support
+                        a variety of languages, but the selection is more limited, and again, the 
+                        code output is mostly hardcoded.
+                    </p>
+                    <p>
+                        In summary, the biggest difference between my project and the two examples is that
+                        the latter are full-fledged code IDEs, while mine is not. 
+                    </p>
+                </div>
+            </section>
+    
+            <section id="design-strategies" class="flex-column-container">
+                <div>
+                    <h2>Design Strategies</h2>
+                    <p>
+                        Overall, this project is going to look pretty much the same as the original, except
+                        it will have some additional features. These new features won't require a rehaul
+                        of the basic structure of the webpage content, or a rehaul of any visual details.
+                        Essentially, the new features will stay in line with the existing theme of the webpage.
+                    </p>
+                </div>
+            </section>
+    
+            <section id="interaction-strategies" class="flex-column-container">
+                <div>
+                    <h2>Interaction Strategies</h2>
+                    <p>
+                        To implement support for multiple languages I'll definitely need a select input element
+                        that users can interact with to select their desired language. After they select a language,
+                        the code should switch to that language's style of code. 
+                    </p>
+                </div>
+            </section>
+    
+            <section id="experience-goals" class="flex-column-container">
+                <div>
+                    <h2>Experience Goals</h2>
+                    <p>
+                        I want users to learn about how for loops work and how different programming languages 
+                        implement them. So I'll need to let users choose from multiple languages using an input element
+                        and change the code shown with JS.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://validator.w3.org/check?uri=https://leonzh2k.github.io/des157a/final/brief.html">Valid HTML5</a>
+                    </li>
+                    <li>
+                        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
