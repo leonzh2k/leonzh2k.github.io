@@ -86,6 +86,10 @@ pre .for-inner-bracket {
     color: rgb(255, 241, 111);
 }
 
+pre .range {
+    color: #38ff9f;
+}
+
 pre .var-declaration {
     color: rgb(68, 202, 255);
 }
@@ -168,6 +172,7 @@ input[type="text"] {
 
 #code-playground .section-header {
     justify-content: space-between;
+    position: relative;
 }
 
 #code-playground .section-header button {
@@ -180,6 +185,20 @@ input[type="text"] {
     background-color: #00FF85;
     color: black;
     cursor: pointer;
+}
+
+#code-playground .section-header select {
+    height: 100%;
+    width: 150px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px;
+    font-weight: bold;
+    /* border: none; */
+    background-color: #5d5d5d;
+    color: white;
+    position: absolute;
+    right: 150px;
+    /* cursor: pointer; */
 }
 
 #code-output {

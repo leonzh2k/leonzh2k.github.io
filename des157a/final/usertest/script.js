@@ -1,6 +1,11 @@
 (function () {
     "use strict";
     console.log("reading js...");
+
+    // User Test prompt
+    alert(
+        "Hello user. Please complete the following tasks: \n 1. Run the code successfully without any errors. \n 2. Try running code on different languages. \n 3. Try a bunch of different inputs."
+    );
     // clears terminal of everything. Also removes the loading icon.
     function clearTerminal() {
         let output = document.querySelector("#output");
@@ -282,21 +287,20 @@
         let codeArea = document.querySelector("#code-input pre");
         // has to be indented like this so it shows up indented properly on screen
         codeArea.innerHTML = 
-        `
-                        <span class="line-number">01</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"First for loop running..."</span>);
+        `                        <span class="line-number">01</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"First for loop running..."</span>);
                         <span class="line-number">02</span>
-                        <span id="code-line-3"></span><label for="unnested-for-loop-max-iter-input"><span class="line-number">03</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="unnested-for-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label>
-                        <span id="code-line-4"></span><label for="unnested-for-loop-console-log-input"><span class="line-number">04</span>       <span class="console">console</span>.<span class="log">log</span>(<input type="text" title="input type: string (ex: &quot;Hello, World!&quot;)" id="unnested-for-loop-console-log-input" maxlength="20" autocomplete="off">);</label>
+                        <span id="code-line-3"><label for="unnested-for-loop-max-iter-input"><span class="line-number">03</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="unnested-for-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label></span>
+                        <span id="code-line-4"><label for="unnested-for-loop-console-log-input"><span class="line-number">04</span>       <span class="console">console</span>.<span class="log">log</span>(<input type="text" title="input type: string (ex: &quot;Hello, World!&quot;)" id="unnested-for-loop-console-log-input" maxlength="20" autocomplete="off">);</label></span>
                         <span class="line-number">05</span>   <span class="for-outer-bracket">}</span>
                         <span class="line-number">06</span>
                         <span class="line-number">07</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"First for loop ended."</span>);
                         <span class="line-number">08</span>
                         <span class="line-number">09</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"Nested for loop running..."</span>);
                         <span class="line-number">10</span>
-                        <span id="code-line-11"></span><label for="nested-for-loop-outer-loop-max-iter-input"><span class="line-number">11</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="nested-for-loop-outer-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label>
+                        <span id="code-line-11"><label for="nested-for-loop-outer-loop-max-iter-input"><span class="line-number">11</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="nested-for-loop-outer-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label></span>
                         <span class="line-number">12</span>      <span class="var-declaration">let</span> <span class="var-name">emptyStr</span> = <span class="string">""</span>;
-                        <span id="code-line-13"></span><label for="nested-for-loop-inner-loop-max-iter-input"><span class="line-number">13</span>      <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">j</span> = <span class="number">0</span>; <span class="var-name">j</span> &lt; <input id="nested-for-loop-inner-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-inner-bracket">{</span></label>
-                        <span id="code-line-14"></span><label for="nested-for-loop-box-symbol"><span class="line-number">14</span>          <span class="var-name">emptyStr</span> += <input type="text" id="nested-for-loop-box-symbol" title="input type: string (ex: &quot;Hello, World!&quot;)" maxlength="3" autocomplete="off">;  </label>
+                        <span id="code-line-13"><label for="nested-for-loop-inner-loop-max-iter-input"><span class="line-number">13</span>      <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">j</span> = <span class="number">0</span>; <span class="var-name">j</span> &lt; <input id="nested-for-loop-inner-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-inner-bracket">{</span></label></span>
+                        <span id="code-line-14"><label for="nested-for-loop-box-symbol"><span class="line-number">14</span>          <span class="var-name">emptyStr</span> += <input type="text" id="nested-for-loop-box-symbol" title="input type: string (ex: &quot;Hello, World!&quot;)" maxlength="3" autocomplete="off">;  </label></span>
                         <span class="line-number">15</span>      <span class="for-inner-bracket">}</span>
                         <span class="line-number">16</span>      <span class="console">console</span>.<span class="log">log</span>(<span class="var-name">emptyStr</span>);
                         <span class="line-number">17</span>   <span class="for-outer-bracket">}</span>
@@ -306,19 +310,75 @@
                         <span class="line-number">21</span>
                         <span class="line-number">22</span>
                         <span class="line-number">23</span>
-        
         `
         console.log(codeArea);
     }
 
     function switchToPythonCode() {
         let codeArea = document.querySelector("#code-input pre");
-        codeArea.innerHTML = "";
+        // has to be indented like this so it shows up indented properly on screen
+        codeArea.innerHTML = 
+        `                        <span class="line-number">01</span>   <span class="console">print</span>(<span class="string">"First for loop running..."</span>);
+                        <span class="line-number">02</span>
+                        <span id="code-line-3"><label for="unnested-for-loop-max-iter-input"><span class="line-number">03</span>   <span class="for">for</span> <span class="var-name">i</span> <span class="for">in</span> <span class="range">range</span>(<span class="number">0</span>, <input id="unnested-for-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">):</label></span>
+                        <span id="code-line-4"><label for="unnested-for-loop-console-log-input"><span class="line-number">04</span>       <span class="console">print</span>(<input type="text" title="input type: string (ex: &quot;Hello, World!&quot;)" id="unnested-for-loop-console-log-input" maxlength="20" autocomplete="off">)</label></span>
+                        <span class="line-number">05</span>   
+                        <span class="line-number">06</span>
+                        <span class="line-number">07</span>   <span class="console">print</span>(<span class="string">"First for loop ended."</span>)
+                        <span class="line-number">08</span>
+                        <span class="line-number">09</span>   <span class="console">print</span>(<span class="string">"Nested for loop running..."</span>)
+                        <span class="line-number">10</span>
+                        <span id="code-line-11"><label for="nested-for-loop-outer-loop-max-iter-input"><span class="line-number">11</span>   <span class="for">for</span> <span class="var-name">i</span> <span class="for">in</span> <span class="range">range</span>(<span class="number">0</span>, <input id="nested-for-loop-outer-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">): </label></span>
+                        <span class="line-number">12</span>      <span class="var-name">emptyStr</span> = <span class="string">""</span>;
+                        <span id="code-line-13"><label for="nested-for-loop-inner-loop-max-iter-input"><span class="line-number">13</span>      <span class="for">for</span> <span class="var-name">j</span> <span class="for">in</span> <span class="range">range</span>(<span class="number">0</span>, <input id="nested-for-loop-inner-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">): </label></span>
+                        <span id="code-line-14"><label for="nested-for-loop-box-symbol"><span class="line-number">14</span>          <span class="var-name">emptyStr</span> += <input type="text" id="nested-for-loop-box-symbol" title="input type: string (ex: &quot;Hello, World!&quot;)" maxlength="3" autocomplete="off">;  </label></span>
+                        <span class="line-number">15</span>      
+                        <span class="line-number">16</span>      <span class="console">print</span>(<span class="var-name">emptyStr</span>);
+                        <span class="line-number">17</span>   
+                        <span class="line-number">18</span>
+                        <span class="line-number">19</span>  <span class="console">print</span>(<span class="string">"Nested for loop ended."</span>);
+                        <span class="line-number">20</span>
+                        <span class="line-number">21</span>
+                        <span class="line-number">22</span>
+                        <span class="line-number">23</span>
+        `
+        console.log(codeArea);
+    }
+
+    function switchToCCode() {
+        let codeArea = document.querySelector("#code-input pre");
+        // has to be indented like this so it shows up indented properly on screen
+        codeArea.innerHTML = 
+        `                        <span class="line-number">01</span>   <span class="console">printf</span>(<span class="string">"First for loop running...\\n"</span>);
+                        <span class="line-number">02</span>
+                        <span id="code-line-3"><label for="unnested-for-loop-max-iter-input"><span class="line-number">03</span>   <span class="for">for</span> (<span class="var-declaration">int</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="unnested-for-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label></span>
+                        <span id="code-line-4"><label for="unnested-for-loop-console-log-input"><span class="line-number">04</span>       <span class="console">printf</span>(<input type="text" title="input type: string (ex: &quot;Hello, World!&quot;)" id="unnested-for-loop-console-log-input" maxlength="20" autocomplete="off">);</label></span>
+                        <span class="line-number">05</span>   <span class="for-outer-bracket">}</span>
+                        <span class="line-number">06</span>
+                        <span class="line-number">07</span>   <span class="console">printf</span>(<span class="string">"First for loop ended.\\n"</span>);
+                        <span class="line-number">08</span>
+                        <span class="line-number">09</span>   <span class="console">printf</span>(<span class="string">"Nested for loop running...\\n"</span>);
+                        <span class="line-number">10</span>
+                        <span id="code-line-11"><label for="nested-for-loop-outer-loop-max-iter-input"><span class="line-number">11</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="nested-for-loop-outer-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label></span>
+                        <span class="line-number">12</span>      
+                        <span id="code-line-13"><label for="nested-for-loop-inner-loop-max-iter-input"><span class="line-number">13</span>      <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">j</span> = <span class="number">0</span>; <span class="var-name">j</span> &lt; <input id="nested-for-loop-inner-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-inner-bracket">{</span></label></span>
+                        <span id="code-line-14"><label for="nested-for-loop-box-symbol"><span class="line-number">14</span>          <span class="console">printf</span>(<input type="text" id="nested-for-loop-box-symbol" title="input type: string (ex: &quot;Hello, World!&quot;)" maxlength="3" autocomplete="off">);  </label></span>
+                        <span class="line-number">15</span>      <span class="for-inner-bracket">}</span>
+                        <span class="line-number">16</span>      <span class="console">printf</span>(<span class="string">"\\n"</span>);
+                        <span class="line-number">17</span>   <span class="for-outer-bracket">}</span>
+                        <span class="line-number">18</span>
+                        <span class="line-number">19</span>  <span class="console">printf</span>(<span class="string">"Nested for loop ended.\\n"</span>);
+                        <span class="line-number">20</span>
+                        <span class="line-number">21</span>
+                        <span class="line-number">22</span>
+                        <span class="line-number">23</span>
+        `
         console.log(codeArea);
     }
 
     // Language switching logic
     let selectLang = document.querySelector("#language");
+    // switchToCCode(); //force to one Language for easy testing (remove this later)
     selectLang.addEventListener("change", (e) => {
         clearTerminal();
         // console.log("change", e.target.value);
@@ -331,9 +391,11 @@
                 // console.log("Switch to python code");
                 switchToPythonCode();
                 break;
-
-
+            case("C"):
+                switchToCCode();
+                break;
         }
     })
     
+
 }());
