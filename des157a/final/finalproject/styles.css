@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    min-width: 900px;
+    /* width: 100%; */
+}
+
+body {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    /* border: 2px red solid; */
+}
+
+h1, h2 {
+    margin-left: 20px;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+}
+
+main {
+    /* border: 2px green solid; */
+    height: 81.5vh;
+}
+
+header {
+    background-color: rgb(68, 68, 68);
+    color: white;
+}
+
+footer {
+    /* border: 2px red solid; */
+    background-color: rgb(68, 68, 68);
+    justify-content: center;
+}
+
+footer nav ul {
+    /* border: 2px red solid; */
+    /* border: 2px green solid; */
+    width: 700px;
+    justify-content: space-around;
+}
+
+footer nav ul li a {
+    /* border: 2px red solid; */
+    background-color: rgb(68, 68, 68);
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+pre {
+    margin-left: -210px;
+    line-height: 23px;
+    /* border: 2px yellow solid; */
+}
+
+pre .line-number {
+    color: rgb(173, 173, 173);
+}
+
+pre .console {
+    color: rgb(140, 255, 240);
+}
+
+pre .log {
+    color: rgb(241, 255, 111);
+}
+
+pre .for, pre .for-outer-bracket {
+    color: rgb(226, 111, 255);
+}
+
+pre .for-inner-bracket {
+    color: rgb(255, 241, 111);
+}
+
+pre .range {
+    color: #38ff9f;
+}
+
+pre .var-declaration {
+    color: rgb(68, 202, 255);
+}
+
+pre .var-name {
+    color: rgb(178, 231, 252);
+}
+
+pre .string {
+    color:rgb(250, 167, 111);
+}
+
+pre .number {
+    color:rgb(171, 255, 168);
+}
+
+pre .error-highlighted {
+    background-color: rgb(141, 0, 0);
+}
+
+pre .comment {
+    color:rgb(84, 155, 82)
+}
+
+
+input {
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background-color: rgb(37, 37, 37);
+    font-family: monospace;
+    padding: 0;
+    height: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+.number-input {
+    width: 20px;
+    color:rgb(171, 255, 168);
+}
+
+input[type="text"] {
+    color:rgb(250, 167, 111);
+}
+
+#nested-for-loop-box-symbol {
+    width: 30px;
+}
+
+.flex-column-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px green solid; */
+}
+
+.flex-row-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* border: 2px red solid; */
+    /* justify-content: space-evenly; */
+}
+
+.section-header {
+    background-color: #00A3FF;
+    height: 60px;
+    /* border: 2px white dotted; */
+    align-items: center;
+}
+
+#code-playground {
+    /* border: 5px white solid; */
+    border-right: 5px white solid;
+    /*
+    border-bottom: 5px white solid;
+    border-left: 5px white solid; */
+    width: 60%;
+    font-size: large;
+}
+
+#code-playground .section-header {
+    justify-content: space-between;
+    position: relative;
+}
+
+#code-playground .section-header button {
+    height: 100%;
+    width: 150px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 27px;
+    font-weight: bold;
+    border: none;
+    background-color: #00FF85;
+    color: black;
+    cursor: pointer;
+}
+
+#code-playground .section-header select {
+    height: 100%;
+    width: 150px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px;
+    font-weight: bold;
+    /* border: none; */
+    /* color: #5d5d5d; */
+    background-color: white;
+    position: absolute;
+    right: 150px;
+    padding-left: 10px;
+    /* cursor: pointer; */
+}
+
+#code-output {
+    /* border: 2px orange solid; */
+    width: 40%;
+}
+
+#code-output .section-header {
+    justify-content: flex-start;
+}
+
+#output {
+    position: relative;
+    overflow-y: auto;
+    height: 75vh;
+    padding-left: 10px;
+    padding-top: 15px;
+    /* background-image: url("../studio1/images/loading.svg"); */
+    /* border: 2px red solid; */
+}
+
+.code-output-line {
+    margin-bottom: 7px;
+    display: block;
+}
+
+#loading-icon {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    margin-top: -75px;
+    left: 50%;
+    margin-left: -75px;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* border: 2px green solid; */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.error-msg {
+    color: rgb(255, 130, 130);
+}
+
+.desc-error-msg {
+    padding: 20px;
+}
+

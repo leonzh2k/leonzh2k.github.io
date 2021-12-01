@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+        <!--  -->
+        <link rel="stylesheet" href="styles.css">
+        <title>Fun With For Loops</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body class="flex-column-wrapper">
+        <header>
+            <h1>Fun With For Loops</h1>
+        </header>
+        <main class="flex-row-wrapper">
+            <section id="code-playground" class="flex-column-wrapper">
+                <div class="section-header flex-row-wrapper">
+                    <h2>Code</h2>
+                    <select name="language" id="language">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="C">C</option>
+                    </select>
+                    <button id="run-code-button">Run >></button>
+                </div>
+                <form id="code-input">
+                    <pre>
+                        <span class="line-number">01</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"First for loop running..."</span>);
+                        <span class="line-number">02</span>
+                        <span id="code-line-3"><label for="unnested-for-loop-max-iter-input"><span class="line-number">03</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="unnested-for-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label></span> <span class="comment">// input type: integer (ex. 5)</span>
+                        <span id="code-line-4"><label for="unnested-for-loop-console-log-input"><span class="line-number">04</span>       <span class="console">console</span>.<span class="log">log</span>(<input type="text" title="input type: string (ex: &quot;Hello, World!&quot;)" id="unnested-for-loop-console-log-input" maxlength="20" autocomplete="off">);</label></span> <span class="comment">// input type: string (ex. "Hello, World!")</span>
+                        <span class="line-number">05</span>   <span class="for-outer-bracket">}</span>
+                        <span class="line-number">06</span>
+                        <span class="line-number">07</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"First for loop ended."</span>);
+                        <span class="line-number">08</span>
+                        <span class="line-number">09</span>   <span class="console">console</span>.<span class="log">log</span>(<span class="string">"Nested for loop running..."</span>);
+                        <span class="line-number">10</span>
+                        <span id="code-line-11"><label for="nested-for-loop-outer-loop-max-iter-input"><span class="line-number">11</span>   <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">i</span> = <span class="number">0</span>; <span class="var-name">i</span> &lt; <input id="nested-for-loop-outer-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-outer-bracket">{</span></label></span> <span class="comment">// input type: integer (ex. 5)</span>
+                        <span class="line-number">12</span>      <span class="var-declaration">let</span> <span class="var-name">emptyStr</span> = <span class="string">""</span>;
+                        <span id="code-line-13"><label for="nested-for-loop-inner-loop-max-iter-input"><span class="line-number">13</span>      <span class="for">for</span> (<span class="var-declaration">let</span> <span class="var-name">j</span> = <span class="number">0</span>; <span class="var-name">j</span> &lt; <input id="nested-for-loop-inner-loop-max-iter-input" title="input type: integer" class="number-input" maxlength="2" autocomplete="off">; <span class="var-name">i</span>++) <span class="for-inner-bracket">{</span></label></span> <span class="comment">// input type: integer (ex. 5)</span>
+                        <span id="code-line-14"><label for="nested-for-loop-box-symbol"><span class="line-number">14</span>          <span class="var-name">emptyStr</span> += <input type="text" id="nested-for-loop-box-symbol" title="input type: string (ex: &quot;Hello, World!&quot;)" maxlength="3" autocomplete="off">;  </label></span> <span class="comment">// string of length 1</span>
+                        <span class="line-number">15</span>      <span class="for-inner-bracket">}</span>
+                        <span class="line-number">16</span>      <span class="console">console</span>.<span class="log">log</span>(<span class="var-name">emptyStr</span>);
+                        <span class="line-number">17</span>   <span class="for-outer-bracket">}</span>
+                        <span class="line-number">18</span>
+                        <span class="line-number">19</span>  <span class="console">console</span>.<span class="log">log</span>(<span class="string">"Nested for loop ended."</span>);
+                        <span class="line-number">20</span>
+                        <span class="line-number">21</span>
+                        <span class="line-number">22</span>
+                        <span class="line-number">23</span>
+                    </pre>
+                </form>
+            </section>
+            <section id="code-output" class="flex-column-wrapper">
+                <div class="section-header flex-row-wrapper">
+                    <h2>Output</h2>
+                </div>
+                <div id="output"></div>
+            </section>
+        </main>
+        <footer class="flex-row-wrapper">
+            <nav>
+                <ul class="flex-row-wrapper">
+                    <li>
+                        <a href="https://validator.w3.org/check?uri=https://leonzh2k.github.io/des157a/final/finalproject/index.html">Valid HTML5</a>
+                    </li>
+                    <li>
+                        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>
