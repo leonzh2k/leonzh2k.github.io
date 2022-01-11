@@ -3,14 +3,14 @@
 }
 
 body {
-    background-color: #333;
-    color: rgb(235, 235, 235);
+    background-color: rgb(250, 213, 153);
+    color: black;
     transition: all 2s;
 }
 
 body.switch {
-    background-color: rgb(235, 235, 235);
-    color: #333;
+    background-color: rgb(15, 39, 71);
+    color: white;
 }
 
 #container {
@@ -32,15 +32,96 @@ header {
     display: flex;
     width: 1100px;
     height: 250px;
+    min-width: 900px;
     margin: auto;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(86, 173, 255);
     overflow: hidden;
+    /* border: 20px white solid; */
 }
 
 #banner.switch {
-    background-color: #333;
-    color: rgb(235, 235, 235);
+    background-color: rgb(3, 8, 71);
+    color: rgb(22, 29, 95);
     transition: all 2s;
+}
+/* plays once and never again */
+#banner #clouds-1 {
+    /* border: 2px green solid; */
+    position: absolute;
+    bottom: -50px;
+    left: -200px;
+    animation-name: clouds-1-horizontal-scroll;
+    animation-duration: 150s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes clouds-1-horizontal-scroll {
+    from {left: -200px;}
+    to {left: 1100px;}
+}
+
+#banner #clouds-2 {
+    /* border: 2px yellow solid; */
+    position: absolute;
+    bottom: -50px;
+    left: -1380px;
+    animation-name: clouds-2-horizontal-scroll;
+    animation-delay: 21s;
+    animation-duration: 282.59s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes clouds-2-horizontal-scroll {
+    from {left: -1350px;}
+    to {left: 1100px;}
+}
+
+#banner #clouds-3 {
+    /* display: none; */
+    /* border: 2px red solid; */
+    position: absolute;
+    bottom: -50px;
+    left: -1380px;
+    animation-name: clouds-3-horizontal-scroll;
+    animation-delay: 180s;
+    animation-duration: 282.59s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes clouds-3-horizontal-scroll {
+    from {left: -1350px;}
+    to {left: 1100px;}
+}
+
+#banner .brickwall {
+    position: absolute;
+    bottom: -20px;
+    z-index: 1;
+    /* left: -50px; */
+    /* height: 200px;
+    width: 111px; */
+    /* border: 1px red solid; */
+}
+
+#banner .hill-1 {
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    height: 111px;
+    width: 600px;
+}
+
+#banner .hill-2 {
+    position: absolute;
+    bottom: 19px;
+    right: -10px;
+    z-index: 0;
+    height: 111px;
+    width: 600px;
 }
 
 main {
@@ -51,9 +132,13 @@ main {
 
 main section {
     width: 25%;
-    border: 1px rgb(235, 235, 235) dashed;
+    border: 1px black dashed;
     margin: 0 .25em;
     padding: 1em;
+}
+
+main section.switch {
+    border: 1px white dashed;
 }
 
 a {
@@ -75,7 +160,7 @@ section a {
     line-height: 1.1em;
     display: inline-block;
     padding: .5em;
-    color: orange;
+    color: black;
 }
 
 section a:hover {
@@ -84,7 +169,7 @@ section a:hover {
 }
 
 section.switch a {
-    color: #333;
+    color: white;
 }
 
 section.switch a:hover {
