@@ -36,6 +36,7 @@ header {
     margin: auto;
     background-color: rgb(86, 173, 255);
     overflow: hidden;
+    transition: all 2s;
     /* border: 20px white solid; */
 }
 
@@ -44,6 +45,7 @@ header {
     color: rgb(22, 29, 95);
     transition: all 2s;
 }
+
 /* plays once and never again */
 #banner #clouds-1 {
     /* border: 2px green solid; */
@@ -97,6 +99,14 @@ header {
     to {left: 1100px;}
 }
 
+circle {
+    transition: all 2s;
+}
+
+circle.switch {
+    fill:rgb(63, 73, 219);
+}
+
 #banner .brickwall {
     position: absolute;
     bottom: -20px;
@@ -107,7 +117,11 @@ header {
     /* border: 1px red solid; */
 }
 
-#banner .hill-1 {
+rect {
+    transition: fill 2s;
+}
+
+#banner #hill-1 {
     position: absolute;
     bottom: 0;
     z-index: 0;
@@ -115,13 +129,22 @@ header {
     width: 600px;
 }
 
-#banner .hill-2 {
+#banner #hill-2 {
     position: absolute;
     bottom: 19px;
     right: -10px;
     z-index: 0;
     height: 111px;
     width: 600px;
+}
+
+path {
+    transition: all 2s;
+}
+
+path.switch {
+    fill: #233a24;
+    transition: all 2s;
 }
 
 main {
@@ -133,12 +156,14 @@ main {
 main section {
     width: 25%;
     border: 1px black dashed;
-    margin: 0 .25em;
+    margin: 0.25em;
     padding: 1em;
+    transition: all 2s;
 }
 
 main section.switch {
     border: 1px white dashed;
+    transition: all 2s;
 }
 
 a {
@@ -161,6 +186,7 @@ section a {
     display: inline-block;
     padding: .5em;
     color: black;
+    transition: all 2s;
 }
 
 section a:hover {
@@ -169,6 +195,7 @@ section a:hover {
 }
 
 section.switch a {
+    transition: all 2s;
     color: white;
 }
 
