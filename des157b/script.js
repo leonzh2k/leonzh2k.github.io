@@ -49,7 +49,7 @@
             }
             for (const brick of bricks) {
                 if (brick.getAttribute('fill') === 'rgb(160, 84, 84)') {
-                    console.log("true")
+                    // console.log("true")
                     brick.setAttribute('fill', '#EA7C7C');
                 } else {
                     brick.setAttribute('fill', '#CFCFCF');
