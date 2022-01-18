@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <title>Blockbuster Video</title>
+</head>
+<body>
+    <!-- add the video code here -->
+    <div id="loading-message">Loading...</div>
+    <div id="replay-button" class="hidden"></div>
+    <video id="myVideo" controls muted autoplay playsinline>
+        <source src="media/final_video.webm" type="video/webm">
+        <source src="media/final_video.mp4" type="video/mp4">
+        <p>Your browser doesn't support HTML5 video. Here is a <a href="media/final-video.mp4">link to the video</a> instead.</p>
+    </video>
+
+    <section id="poem">
+        <p id="line1" class="hidden">
+            Music is the ocean
+            <br>
+            That pulls me to the <span id="shore">shore</span>
+        </p>
+        <p id="line2" class="hidden">
+            Music is the rhythm
+            <br>
+            That moves me to the core
+        </p>
+        <p id="line3" class="hidden">
+            Music is the therapy I need
+            <br>
+            When I feel blue
+        </p>
+        <p id="line4" class="hidden">
+            Music lifts my spirits
+            <br>
+            To make sure I pull through
+        </p>
+    </section>
+</body>
+</html>

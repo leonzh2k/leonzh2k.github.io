@@ -1,0 +1,107 @@
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /* filter: saturate(720%); */
+}
+
+#shore {
+    color: rgb(236, 222, 140);
+}
+
+/* #shore:hover {
+    color: blue;
+} */
+
+#poem p {
+    position: absolute;
+    padding: 1em;
+    
+    /* background-color: black; */
+    color: antiquewhite;
+    /* transition: all 2.5s; */
+}
+
+#line1 {
+    top: 40%;
+    left: 50%;
+    font-size: 5em;
+    transform: translate(-50%, -50%);
+    border: 2px white solid;
+    width: 1000px;
+    z-index: 2;
+}
+
+#line2 {
+    top: 65%;
+    left: 55%;
+    font-size: 4em;
+    transform: translate(-50%, -50%);
+    border: 2px white solid;
+    width: 700px;
+}
+
+#line3 {
+    top: 30%;
+    left: 47%;
+    font-size: 3em;
+    transform: translate(-50%, -50%);
+    /* border: 2px white solid; */
+    /* transform: rotateY(70deg); */
+    width: 700px;
+}
+
+#line4 {
+    top: 40%;
+    left: 50%;
+    font-size: 5em;
+    transform: translate(-50%, -50%);
+    border: 2px white solid;
+    width: 1000px;
+}
+
+#loading-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 36px;
+    color: antiquewhite;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+#replay-button {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    font-size: 36px;
+    height: 600px;
+    width: 600px;
+    color: antiquewhite;
+    transform: translate(-50%, -50%);
+    /* background-color: white; */
+    /* padding: 20px 20px 20px 20px; */
+    border-radius: 600px;
+    
+    z-index: 1;
+    cursor: pointer;
+    /* display: none; */
+}
+
+#replay-button:hover {
+    border: 2px rgb(18, 255, 10) solid;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.showing {
+    opacity: 1;
+}
+
