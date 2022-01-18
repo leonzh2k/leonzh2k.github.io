@@ -21,6 +21,7 @@
     myVideo.addEventListener('playing', function() {
         loadingMsg.style.display = 'none';
         replayButton.className = "hidden";
+        replayButton.style.zIndex = '1';
     })
 
     replayButton.addEventListener('click', () => {
@@ -77,6 +78,7 @@
         console.log("ended");
         canReplay = true;
         replayButton.className = "showing";
+        replayButton.style.zIndex = '4';
     });
 
     
