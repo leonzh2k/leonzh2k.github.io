@@ -20,12 +20,12 @@
 
     myVideo.addEventListener('playing', function() {
         loadingMsg.style.display = 'none';
-        replayButton.className = "hidden";
-        replayButton.style.zIndex = '1';
+        // replayButton.className = "hidden";
+        // replayButton.style.zIndex = '1';
     })
 
     replayButton.addEventListener('click', () => {
-        if (canReplay) {
+        if (canReplay && myVideo.currentTime == 20.466) {
             myVideo.currentTime = 0;
             myVideo.play();
             canReplay = false;
@@ -48,8 +48,16 @@
     const intervalID = setInterval(checkTime, 100);
 
     function checkTime() {
-        // console.log(myVideo.currentTime);
-
+        console.log(myVideo.currentTime);
+        if (myVideo.currentTime == 20.466) {
+            canReplay = true;
+            replayButton.className = "showing";
+            replayButton.style.zIndex = '4';
+        } else {
+            canReplay = false;
+            replayButton.className = "hidden";
+            replayButton.style.zIndex = '1';
+        }
         if (poem.start[0] < myVideo.currentTime && myVideo.currentTime < poem.stop[0]) {
             poem.line[0].className = "showing";
             line1Shown = true;
@@ -74,12 +82,12 @@
         }
     }
 
-    myVideo.addEventListener('ended', () => {
-        console.log("ended");
-        canReplay = true;
-        replayButton.className = "showing";
-        replayButton.style.zIndex = '4';
-    });
+    // myVideo.addEventListener('ended', () => {
+    //     console.log("ended");
+    //     canReplay = true;
+    //     replayButton.className = "showing";
+    //     replayButton.style.zIndex = '4';
+    // });
 
     
 })();
