@@ -14,13 +14,12 @@ svg {
 }
 
 section {
-    /* background-color: green; */
     position: relative;
 }
 
 #blink-text {
     position: absolute;
-    top: 50%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -29,7 +28,7 @@ section {
 
 #activity-text {
     position: absolute;
-    top: 58%;
+    top: 61%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
