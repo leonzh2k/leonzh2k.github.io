@@ -1,0 +1,42 @@
+{
+    "point1": {
+        "time": "2:45",
+        "activity": "watching lecture",
+        "blinks": 213
+    },
+    "point2": {
+        "time": "3:00",
+        "activity": "watching lecture",
+        "blinks": 151
+    },
+    "point3": {
+        "time": "3:15",
+        "activity": "watching lecture",
+        "blinks": 137
+    },
+    "point4": {
+        "time": "3:30",
+        "activity": "watching lecture",
+        "blinks": 90
+    },
+    "point5": {
+        "time": "3:45",
+        "activity": "watching lecture",
+        "blinks": 114
+    },
+    "point6": {
+        "time": "4:00",
+        "activity": "writing data.json",
+        "blinks": 80
+    },
+    "point7": {
+        "time": "4:15",
+        "activity": "cleaning room",
+        "blinks": 101
+    },
+    "point8": {
+        "time": "4:30",
+        "activity": "slacking off",
+        "blinks": 54
+    }
+}
