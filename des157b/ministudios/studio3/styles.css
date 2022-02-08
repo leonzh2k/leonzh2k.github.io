@@ -1,0 +1,44 @@
+h2 {
+    font-size: 200px;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+}
+.intro h2 {
+    font-size: 100px;
+}
+
+.divider {
+    background-color: black;
+    width: 3px;
+    height: 500px;
+}
+
+.content {
+    /* height: 100px;
+    width: 100px; */
+    /* background-color: green; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* border: 2px red dotted; */
+    padding-left: 200px;
+    /* text-align: center; */
+    /* padding-right: 100px; */
+}
+
+.content .divider {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+ul {
+    font-size: 26px;
+    
+}
+
+li {
+    margin-top: 20px;
+}
