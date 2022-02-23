@@ -27,14 +27,17 @@
 <body>
     <h1>loop</h1>
 
-    <p>logs parameter times times to the console.</p>
+    <p>
+        logs "thingToPrint" 'times' times to the console. I came up with it after hours 
+        of painstaking brainstorming. 
+    </p>
 
     <h2>Named Function</h2>
     <code>
         <pre>
-            function loop(parameter, times){
+            function loop(thingToPrint, times){
                 for (let i = 0; i < times; i++) {
-                    console.log(parameter);
+                    console.log(thingToPrint);
                 }
             }
         </pre>
@@ -43,9 +46,9 @@
     <h2>Function Expression</h2>
     <code>
         <pre>
-            const functExp = function(parameter, times){
+            const functExp = function(thingToPrint, times){
                 for (let i = 0; i < times; i++) {
-                    console.log(parameter);
+                    console.log(thingToPrint);
                 }
             }
         </pre>
@@ -54,9 +57,9 @@
     <h2>Arrow Function</h2>
     <code>
         <pre>
-            const arrFunc = (parameter, times) => {
+            const arrFunc = (thingToPrint, times) => {
                 for (let i = 0; i < times; i++) {
-                    console.log(parameter);
+                    console.log(thingToPrint);
                 }
             }
         </pre>
