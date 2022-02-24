@@ -42,7 +42,7 @@
         }
     });
     // will be fetched from database later
-    let vizCount = 16;
+    let vizCount = 18;
     for (let i = 0; i < vizCount; i++) {
         let vizThumbNail = document.createElement("div");
         vizThumbNail.textContent = "viz thumbnail";
