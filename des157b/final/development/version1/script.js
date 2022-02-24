@@ -31,7 +31,6 @@
     creatViz.addEventListener("click", () => {
         console.log(state);
         if (state !== "create") {
-            console.log("da fuq")
             let child = main.firstElementChild;
             main.removeChild(child);
             let createSection = document.createElement("section");
