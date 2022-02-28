@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(117, 117, 117);
+}
+
+/* main section {
+    height: 80vh;
+} */
+
 #container {
     position: relative;
     width: 100%;
@@ -15,11 +23,13 @@
 
 header {
     margin: 0 auto 2em auto;
+    background-color: black;
 }
 
 header nav ul {
     cursor: pointer;
     font-size: 1.5em;
+    color: rgb(0, 255, 0);
     list-style-type: none;
     display: flex;
     border: 2px green solid;
@@ -29,22 +39,37 @@ header nav ul li {
     margin-right: 1em;
 }
 
+/* #view-viz {
+    height: 20vh;
+    width: 20vw;
+} */
+
 #gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start; */
     border: 2px blue solid;
 
-    /* display: grid; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 325px);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+#view-viz {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
 }
 
 #gallery div {
-    height: 200px;
-    width: 300px;
-    border: 2px orange dotted;
-    margin-bottom: 1.5em;
+    height: 250px;
+    width: 325px;
+    /* border: 2px orange dotted; */
+    /* margin-bottom: 1.5em; */
     text-align: center;
     vertical-align: bottom;
+    cursor: pointer;
 }
 
 #gallery div img {
