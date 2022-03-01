@@ -1,5 +1,6 @@
 import squares from "./viz/squares.js";
 (() => {
+
     Parse.initialize("01t8qb2FLCXC70NIrlplthJEfFpLVhvx6RCK2S2Z", "MfK5pEk5haJ95TcyTeIkYQdodIQJ2sk1Pn3jZCXX"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
     Parse.serverURL = "https://parseapi.back4app.com/";
     
@@ -112,7 +113,6 @@ import squares from "./viz/squares.js";
 
         // assume data has no errors for now (viz always shows), 
         // perform proper error checking later
-        emptyElement([main, gallery]);
         main.appendChild(section);
         // decide which viz to show
         // try {
