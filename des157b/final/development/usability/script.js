@@ -230,5 +230,5 @@ import squares from "./viz/squares.js";
                 // }, (error) => {
                 //     console.log(error);
                 // });
-    alert("Hello.\nPlease do the following:\n1. View some audio visualizations. \n2. Figure out how to play and pause the audio.\n3. Create a viz using your favorite song. ");
+    alert("Hello.\nPlease do the following:\n1. View some audio visualizations. \n2. Figure out how to play and pause the audio in a viz.\n3. Create a viz using your favorite song, then view it in the gallery. ");
 })();
