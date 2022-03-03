@@ -1,31 +1,34 @@
 function squares(vizMetadata) {
     const s = ( sketch ) => {
         // console.log(currentSketch);
-        let x = 100;
+        // let x = 100;
         let y = 100;
         let rotate = 0;
         let windowHeight = window.innerHeight;
-        let songName = 'http://api.soundcloud.com/tracks/148976759/stream?client_id=95f22ed54a5c297b1c41f72d713623ef';
+        let songName = 'https://cors-anywhere.herokuapp.com/https://listen.hs.llnwd.net/g3/prvw/2/8/4/0/6/2387160482.mp3';
         let song;
         let fft;
-        let context;
-        let src;
-        let analyzer;
-        let bufferLength;
-        let dataArray;
-        let osc;
-        // let x = 0;
-        let playing = false;
-        let up = true;
-        // console.log(di);
-        // const player = new Tone.Player(songName).toDestination();
-        // Tone.loaded().then(() => {
-        //     player.start();
-        // });
+        
         sketch.preload = () => {
-            // loadSound doesn't seem to work for web urls
-            // sketch.soundFormats('mp3');
+            sketch.soundFormats('mp3');
+            var request = new XMLHttpRequest();
+            request.open('GET', songName);
+            request.responseType = 'blob';
+            // I put "XMLHttpRequest" here, but you can use anything you want.
+            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            request.onload = function() {
+                // alert(x.responseText);
+                console.log(request);
+                var url = URL.createObjectURL(request.response);
+                console.log(url);
+                // song = new Audio(url);
+                song = sketch.loadSound(request.response);
+                // song.play();
+            };
+            request.send();
+
             // song = sketch.loadSound(songName);
+            // song = new Audio("https://cors-anywhere.herokuapp.com/https://listen.hs.llnwd.net/g3/prvw/2/8/4/0/6/2387160482.mp3")
             // osc = new p5.Oscillator('sine');
             // song = new Audio(songName);
             // song.crossOrigin = "anonymous";
@@ -42,12 +45,11 @@ function squares(vizMetadata) {
         }
         sketch.setup = () => {
             // console.log(document.getElementById("view-viz").clientHeight);
-            osc = new p5.Oscillator("sawtooth");
-            osc.freq(x);
-            osc.amp(0.1);
-            osc.pan(0.1, 1)
+            // osc = new p5.Oscillator("sawtooth");
+            // osc.freq(x);
+            // osc.amp(0.1);
+            // osc.pan(0.1, 1)
             sketch.createCanvas(document.getElementById("view-viz").clientWidth, windowHeight / 1.2);
-            // sketch.parent("main");
 
             fft = new p5.FFT();
             sketch.rectMode(sketch.CENTER);
@@ -60,7 +62,7 @@ function squares(vizMetadata) {
         };
     
         sketch.draw = () => {
-            console.log("draw")
+            // console.log("draw")
             // console.log(analyzer.getByteFrequencyData(dataArray));
             sketch.background(0); // clears previous drawings (without it would keep)
             sketch.fill(255);
@@ -80,23 +82,6 @@ function squares(vizMetadata) {
             sketch.stroke(vizMetadata.get("vizParams").trebleColor);
             sketch.rect(0,0,trebEnergy,trebEnergy);
 
-            osc.freq(x);
-            rotate += 0.01;
-            console.log(x)
-            if (up) {
-                x += 1;
-            } else {
-                x -= 1;
-            }
-            
-            if (x == 50) {
-                up = true;
-            }
-
-            if (x == 200) {
-                up = false;
-            }
-            
         };
 
         sketch.mousePressed = () => {
@@ -108,13 +93,13 @@ function squares(vizMetadata) {
             //     song.play();
             //     sketch.loop();
             // }
-            if (!playing) {
-                osc.start();
-                playing = !playing;
-            } else {
-                osc.stop();
-                playing = !playing;
-            }
+            // if (!playing) {
+            //     osc.start();
+            //     playing = !playing;
+            // } else {
+            //     osc.stop();
+            //     playing = !playing;
+            // }
            
             // sketch.noLoop();
             // let fs = sketch.fullscreen();
