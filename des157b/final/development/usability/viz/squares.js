@@ -2,7 +2,7 @@ function squares(vizMetadata) {
     const s = ( sketch ) => {
         let rotate = 0;
         let windowHeight = window.innerHeight;
-        let songName = `https://cors-anywhere.herokuapp.com/${vizMetadata.get("vizParams").songUrl}`;
+        let songName = `https://mighty-stream-75885.herokuapp.com/${vizMetadata.get("vizParams").songUrl}`;
         let song;
         let fft;
         let audioLoading = true;
