@@ -34,6 +34,7 @@ import squares from "./viz/squares.js";
             emptyElement([main]);
             let createSection = document.createElement("section");
             createSection.id = "create-viz";
+            createSection.style.fontSize = "20px";
             // createSection.textContent = "viz graphic";
             main.appendChild(createSection);
             createSection.innerHTML = `
@@ -44,10 +45,12 @@ import squares from "./viz/squares.js";
                 </input>
                 <button id="search">search</button>
                 <div>Click on a song to select it for the viz and then submit when you're ready. The viz will show up on the gallery.</div>
-                <div id="searchresults"><div>t</div></div>
+                <div id="searchresults"><div></div></div>
                 <button id="submit">Submit</button>
             
             `
+
+
             let vizParams = {
                 "bassColor": "#646ffc",
                 "trebleColor": "#fc41a5",
@@ -62,14 +65,58 @@ import squares from "./viz/squares.js";
                     vizType: "Squares",
                     vizParams: vizParams
                 }).then((VizMetadata) => {
+                    alert("viz submitted, view in gallery");
                     console.log("succes");
                 }, (error) => {
                     console.log(error);
                 });
             })
+
+            document.querySelector("#searchsong").addEventListener("keydown", async (e) => {
+                console.log(e.key)
+                    if (e.key == "Enter") {
+                        const songToSearch = document.querySelector("#searchsong").value;
+                        if (songToSearch !== "") {
+                            asyncFetchTrackData("ZDIxMDM1NTEtYjk3OS00YTI1LWIyYjItYjBjOWVmMWYyN2I3", songToSearch).then(searchResults => {
+                                emptyElement([document.querySelector("#searchresults")]);
+                                console.log(searchResults);
+                                searchResults.search.data.tracks.forEach(track => {
+                                    let div = document.createElement("div");
+                                    div.textContent = `${track.artistName} - ${track.name}`;
+                                    document.querySelector("#searchresults").appendChild(div);
+
+                                    div.style.cursor = "pointer";
+                                    div.addEventListener("mouseover", () => {
+                                        console.log("yeah")
+                                        div.style.backgroundColor = "blue";
+                                    })
+                                    div.addEventListener("click", () => {
+                                        vizParams.songUrl = track.previewURL;
+                                        vizParams.artist = track.artistName;
+                                        vizParams.songTitle = track.name;
+                                        document.querySelector("#currentsong").textContent = `CURRENTLY SELECTED SONG: ${vizParams.artist} - ${vizParams.songTitle}`
+                                        // console.log(trackURL);
+                                    })
+                                   
+                                    // div.addEventListener("mouseout", () => {
+                                    //     div.style.backgroundColor = null;
+                                    // })
+                                    // finalTrackData.push({
+                                    //   trackImageSrc: "https://api.napster.com/imageserver/v2/albums/" + track.albumId + "/images/500x500.jpg",
+                                    //   trackID: track.id,
+                                    //   trackShortcut: track.shortcut,
+                                    //   trackName: track.name,
+                                    //   trackArtist: track.artistName,
+                                    //   trackOrder: trackOrder
+                                    // })
+                                    // trackOrder++;
+                                })
+                            })
+                    }
+                }
+            })
             
             document.querySelector("#search").addEventListener("click", async () => {
-                console.log(document.querySelector("#searchsong").value);
                 const songToSearch = document.querySelector("#searchsong").value;
                 if (songToSearch !== "") {
                     asyncFetchTrackData("ZDIxMDM1NTEtYjk3OS00YTI1LWIyYjItYjBjOWVmMWYyN2I3", songToSearch).then(searchResults => {
@@ -80,6 +127,13 @@ import squares from "./viz/squares.js";
                             div.textContent = `${track.artistName} - ${track.name}`;
                             document.querySelector("#searchresults").appendChild(div);
 
+                            div.style.cursor = "pointer";
+                            div.addEventListener("mouseover", () => {
+                                div.style.backgroundColor = "blue";
+                            })
+                            div.addEventListener("mouseout", () => {
+                                div.style.backgroundColor = null;
+                            })
                             div.addEventListener("click", () => {
                                 vizParams.songUrl = track.previewURL;
                                 vizParams.artist = track.artistName;
@@ -229,5 +283,4 @@ import squares from "./viz/squares.js";
                 // }, (error) => {
                 //     console.log(error);
                 // });
-    alert("Hello.\nPlease do the following:\n1. View some audio visualizations. \n2. Figure out how to play and pause the audio in a viz.\n3. Create a viz using your favorite song, then view it in the gallery. ");
 })();

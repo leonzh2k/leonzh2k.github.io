@@ -2,10 +2,15 @@ function squares(vizMetadata) {
     const s = ( sketch ) => {
         let rotate = 0;
         let windowHeight = window.innerHeight;
-        let songName = `https://mighty-stream-75885.herokuapp.com/${vizMetadata.get("vizParams").songUrl}`;
+        // for local dev, use the demo server, for production, use my own server
+        // https://mighty-stream-75885.herokuapp.com
+        // https://cors-anywhere.herokuapp.com
+        let proxyUrl = "https://cors-anywhere.herokuapp.com";
+        let songName = `${proxyUrl}/${vizMetadata.get("vizParams").songUrl}`;
         let song;
         let fft;
         let audioLoading = true;
+        let p;
         sketch.preload = () => {
 
             console.log("load");
@@ -33,6 +38,11 @@ function squares(vizMetadata) {
             let cnv = sketch.createCanvas(document.getElementById("view-viz").clientWidth, windowHeight / 1.2);
             cnv.mousePressed(toggleAudio);
             
+            p = sketch.createP('play');
+            // p.parent("view-viz");
+            p.style('font-size', '25px');
+            p.position(650, 635);
+            p.mousePressed(toggleAudio);
 
             fft = new p5.FFT();
             sketch.rectMode(sketch.CENTER);
@@ -58,7 +68,7 @@ function squares(vizMetadata) {
     
         sketch.draw = () => {
             // console.log("draw");
-            sketch.background(0); // clears previous drawings (without it would keep)
+            sketch.background(0); // clears previous drawings (without it would keep shapes from previous draw)
             sketch.fill(255);
             
             sketch.textSize(21);
@@ -101,15 +111,17 @@ function squares(vizMetadata) {
         }
 
         function toggleAudio() {
-            console.log("canvas pressed");
+            // console.log("canvas pressed");
             console.log(song)
             if (song != undefined) {
 
                 if (song.isPlaying()) {
                     song.pause();
+                    p.html('play');
                     // sketch.noLoop();
                 } else {
                     song.play();
+                    p.html('pause');
                     // sketch.loop();
                 }
             } else {
