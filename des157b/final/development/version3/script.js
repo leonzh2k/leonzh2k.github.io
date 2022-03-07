@@ -90,6 +90,9 @@ import squares from "./viz/squares.js";
                                         console.log("yeah")
                                         div.style.backgroundColor = "blue";
                                     })
+                                    div.addEventListener("mouseout", () => {
+                                        div.style.backgroundColor = null;
+                                    })
                                     div.addEventListener("click", () => {
                                         vizParams.songUrl = track.previewURL;
                                         vizParams.artist = track.artistName;
