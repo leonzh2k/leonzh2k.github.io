@@ -5,7 +5,7 @@ function boxes(vizMetadata) {
         // for local dev, use the demo server, for production, use my own server
         // https://mighty-stream-75885.herokuapp.com
         // https://cors-anywhere.herokuapp.com
-        let proxyUrl = "https://cors-anywhere.herokuapp.com";
+        let proxyUrl = "https://mighty-stream-75885.herokuapp.com";
         let songName = `${proxyUrl}/${vizMetadata.get("vizParams").songUrl}`;
         let song;
         let fft;
