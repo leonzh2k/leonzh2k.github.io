@@ -75,8 +75,9 @@ function boxes(vizMetadata) {
             
             sketch.textSize(21);
             sketch.textFont(font);
-            sketch.fill('#ED225D');
-            sketch.text(`${vizMetadata.get("vizParams").artist} - ${vizMetadata.get("vizParams").songTitle} `, 50, windowHeight / 1.3);
+            // sketch.fill('#ED225D');
+            console.log(vizMetadata.get("vizParams").artist)
+            sketch.text(`${vizMetadata.get("vizParams").artist} - ${vizMetadata.get("vizParams").songTitle} `, -550, 275);
 
             fft.analyze();
             let trebEnergy = fft.getEnergy("treble");
