@@ -47,11 +47,15 @@ import boxes from "./viz/boxes.js";
                 <button id="search">search</button>
                 <div>Click on a song to select it for the viz and then submit when you're ready. The viz will show up on the gallery.</div>
                 <div id="searchresults"><div></div></div>
-                <button id="submit">Submit</button>
+                
+                <h3>Viz Type</h3>
                 <label for="boxes">Boxes</label>
                 <input type="radio" name="viztype" id="boxes" value="Boxes">
                 <label for="squares">Squares</label>
                 <input type="radio" name="viztype" id="squares" value="Squares">
+                <br>
+                <br>
+                <button id="submit">Submit</button>
             `
 
 
