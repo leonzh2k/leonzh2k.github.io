@@ -39,10 +39,10 @@ import boxes from "./viz/boxes.js";
             // createSection.textContent = "viz graphic";
             main.appendChild(createSection);
             createSection.innerHTML = `
-                <span>Search for a song</span>
-                <div id="currentsong"></div>
+                <h3>Search for a song</h3>
+                <div id="currentsong">Currently selected song: none</div>
                 <input type=text id="searchsong">
-                
+                    
                 </input>
                 <button id="search">search</button>
                 <div>Click on a song to select it for the viz and then submit when you're ready. The viz will show up on the gallery.</div>
@@ -111,7 +111,7 @@ import boxes from "./viz/boxes.js";
                                         vizParams.songUrl = track.previewURL;
                                         vizParams.artist = track.artistName;
                                         vizParams.songTitle = track.name;
-                                        document.querySelector("#currentsong").textContent = `CURRENTLY SELECTED SONG: ${vizParams.artist} - ${vizParams.songTitle}`
+                                        document.querySelector("#currentsong").textContent = `Currently selected song: ${vizParams.artist} - ${vizParams.songTitle}`
                                         // console.log(trackURL);
                                     })
                                    
